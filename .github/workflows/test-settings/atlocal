@@ -1,6 +1,7 @@
-COBC="cobc -locesql"
+# note: --no-as-needed is used we can't us -static
+COBC="cobc -locesql -Q -Wl,-rpath,/usr/local/lib,--no-as-needed"
 OCESQL=ocesql
 EMBED_DB_INFO="sh ../../embed_db_info.sh"
 COMPILE="${COBC} -I ../../"
 COMPILE_MODULE="${COMPILE} -m"
-RUN_MODULE="sh ../../cobol_runner.sh"
+RUN_MODULE="cobcrun"
